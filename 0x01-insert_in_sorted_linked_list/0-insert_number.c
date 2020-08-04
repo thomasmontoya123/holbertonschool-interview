@@ -13,6 +13,8 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *newNode, *temporal;
 
+	temporal = *head;
+
 	newNode = malloc(sizeof(listint_t));
 	if (!newNode)
 		return (NULL);
@@ -25,7 +27,6 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = newNode;
 		return (newNode);
 	}
-	temporal = *head;
 
 	if (number < temporal->n)
 	{
