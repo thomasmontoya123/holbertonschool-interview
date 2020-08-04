@@ -18,6 +18,13 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 
 	newNode->n = number;
+
+	if (!head)
+	{
+		newNode->next = NULL;
+		*head = newNode;
+		return (newNode);
+	}
 	temporal = *head;
 
 	if (number < temporal->n)
