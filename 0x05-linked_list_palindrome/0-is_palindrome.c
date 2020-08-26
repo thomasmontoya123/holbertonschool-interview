@@ -7,7 +7,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int A[999], i, j;
+	int A[999999], i, j;
 	listint_t *temporal = *head;
 
 	if (!head)
