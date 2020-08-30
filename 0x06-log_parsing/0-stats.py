@@ -12,21 +12,21 @@ def log_parser():
         <status code> <file size>
     """
     total_file_size = 0
-    status_codes_count = {200: 0, 301: 0, 400: 0, 401: 0,
-                          403: 0, 404: 0, 405: 0, 500: 0}
+    status_codes_count = {"200": 0, "301": 0, "400": 0, "401": 0,
+                          "403": 0, "404": 0, "405": 0, "500": 0}
 
     try:
         for idx, line in enumerate(stdin, 1):
             in_tokens = line.split(" ")
             if len(in_tokens) > 2:
-                status_code = int(in_tokens[-2])
+                status_code = in_tokens[-2]
                 file_size = int(in_tokens[-1])
                 total_file_size += file_size
 
                 if status_code in status_codes_count.keys():
                     status_codes_count[status_code] += 1
 
-                if idx % 10:
+                if idx % 10 == 0:
                     print("File size: {}".format(total_file_size))
                     for status, count in sorted(status_codes_count.items()):
                         if count != 0:
