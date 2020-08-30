@@ -16,7 +16,7 @@ def log_parser():
                           403: 0, 404: 0, 405: 0, 500: 0}
 
     try:
-        for idx, line in enumerate(stdin):
+        for idx, line in enumerate(stdin, 1):
             in_tokens = line.split(" ")
             if len(in_tokens) > 2:
                 status_code = int(in_tokens[-2])
