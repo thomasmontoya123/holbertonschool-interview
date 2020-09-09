@@ -9,6 +9,9 @@ int check_cycle(listint_t *list)
 {
 	listint_t *onestep, *twostep;
 
+	if (!list)
+		return (0);
+
 	onestep = list;
 	twostep = list->next;
 
