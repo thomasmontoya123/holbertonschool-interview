@@ -15,7 +15,7 @@ int check_cycle(listint_t *list)
 	onestep = list;
 	twostep = list->next;
 
-	while (twostep->next != NULL)
+	while (twostep && twostep->next)
 	{
 		if (onestep == twostep)
 			return (1);
